@@ -25,7 +25,7 @@
         bottom: 0;
         z-index: 6;
         width: 60%;
-        height: 30%;
+        height: auto;
     }
     
     .text {
