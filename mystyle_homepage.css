@@ -1,0 +1,370 @@
+
+/*phone*/
+@media only screen and (max-width:481px)  {
+    html { 
+        overflow-y: hidden; 
+    }
+
+    html, body {
+        min-height: 100%;
+    }
+   
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .linie_home {
+        width: 350px;
+        min-height: 100vh;
+
+    }
+    
+    .logo_home {
+        position: fixed;
+        bottom: 0;
+        z-index: 6;
+        width: 60%;
+        height: 30%;
+    }
+    
+    .text {
+        color:white;
+        z-index: 3;
+        position: fixed;
+        top: 30%;
+        left: 2%;
+        font-size: 1.1em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        display: none;
+    }
+    
+    .welcome {
+        color:black;
+        z-index: 4;
+        position: relative;
+        /* top: 17%;
+        left: 43%; */
+        right: 10%;
+        font-size: 2.7em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .happy {
+        color:black;
+        z-index: 4;
+        position: relative;
+        /* top: 28%;
+        left: 40%; */
+        right: 10%;
+        font-size: 1.1em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form {
+        z-index: 4;
+        position: fixed;
+        top: 20%;
+        left: 25%;
+        text-align: center;
+    }
+
+    .form div {
+        margin: 5px;
+    }
+    
+    .form button {
+        border-radius: 50px;
+        position: relative;
+        background: #ffffff;
+        height: 60px;
+        width: 230px;
+        border: 2px solid #34C292;
+        margin: 10px;
+        right: 10%;
+        color: #34C292;
+        font-size: 1.4em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    } 
+}
+
+/*tableta*/
+
+@media only screen and (min-width:481px)  {
+    html { 
+        overflow-y: hidden; 
+    }
+
+    html, body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .linie_home {
+        width: 460px;
+        min-height: 100vh;
+    }
+    
+    .logo_home {
+        position: fixed;
+        bottom: 0;
+        z-index: 6;
+        width: 203.4px;
+        height: 162px;
+    }
+    
+    .text {
+        color:white;
+        z-index: 3;
+        position: fixed;
+        top: 30%;
+        left: 2%;
+        font-size: 1.3em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .welcome {
+        color:black;
+        z-index: 4;
+        position: relative;
+        /* top: 17%;
+        left: 43%; */
+        right: 10%;
+        font-size: 3em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .happy {
+        color:black;
+        z-index: 4;
+        position: relative;
+        /* top: 28%;
+        left: 40%; */
+        right: 10%;
+        font-size: 1.4em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form {
+        z-index: 4;
+        position: fixed;
+        top: 20%;
+        left: 48%;
+        text-align: center;
+    }
+
+    .form div {
+        margin: 10px;
+    }
+    
+    .form button {
+        border-radius: 50px;
+        position: relative;
+        background: #34C292;
+        height: 60px;
+        width: 210px;
+        border: none;
+        margin: 20px;
+        right: 10%;
+        color: white;
+        font-size: 1.4em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    } 
+}
+
+/* small screens, laptops */
+@media only screen and (min-width:769px)  {
+    html { 
+        overflow-y: hidden; 
+    }
+
+    html, body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .linie_home {
+        width: 76%;
+        height: 792px;
+    }
+    
+    .logo_home {
+        position: fixed;
+        bottom: 0;
+        z-index: 6;
+        width: 27%;
+        height: auto;
+    }
+    
+    .text {
+        color:white;
+        z-index: 3;
+        position: fixed;
+        top: 20%;
+        left: 2%;
+        font-size: 1.7em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .welcome {
+        color:black;
+        z-index: 4;
+        position: fixed;
+        top: 17%;
+        left: 40%;
+        font-size: 3.7em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .happy {
+        color:black;
+        z-index: 4;
+        position: fixed;
+        top: 28%;
+        left: 40%;
+        font-size: 1.8em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form {
+        z-index: 4;
+        position: fixed;
+        top: 40%;
+        left: 54%;
+        right: auto;
+        text-align: center;
+    }
+    
+    .form button {
+        border-radius: 50px;
+        background: #34C292;
+        height: 70px;
+        width: 330px;
+        border: none;
+        margin: 20px;
+        color: white;
+        font-size: 1.4em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+/*desktop*/
+
+@media only screen and (min-width:1200px){
+    html { 
+        overflow-y: hidden; 
+    }
+
+    html, body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .linie_home {
+        width: 76%;
+        height: 797px;
+
+    }
+    
+    .logo_home {
+        position: fixed;
+        bottom: 0;
+        z-index: 6;
+        width: 27%;
+        height: auto;
+    }
+    
+    .text {
+        color:white;
+        z-index: 3;
+        position: fixed;
+        top: 20%;
+        left: 2%;
+        font-size: 1.7em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* .welcome {
+        color:black;
+        z-index: 4;
+        position: fixed;
+        top: 17%;
+        left: 40%;
+        font-size: 3.7em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .happy {
+        color:black;
+        z-index: 4;
+        position: fixed;
+        top: 28%;
+        left: 40%;
+        text-align: center;
+        font-size: 1.8em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    } */
+    
+    .form {
+        z-index: 4;
+        position: fixed;
+        top: 40%;
+        left: 54%;
+        right: 20%;
+        text-align: center;
+    }
+    .form div {
+        color:black;
+        z-index: 4;
+        position: fixed;
+        text-align: center;
+        font-size: 1.8em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        margin: 20px;
+    }
+
+    .form .welcome {
+        font-size: 3.7em;
+    }
+    
+    .form button {
+        border-radius: 50px;
+        background: #34C292;
+        height: 70px;
+        width: 330px;
+        border: none;
+        margin: 20px;
+        color: white;
+        font-size: 1.4em;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
