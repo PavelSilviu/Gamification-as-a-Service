@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="badgesAndLevels.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+      <!--<header>
+        <h1></h1>
+        <!--<img src="dove.png" alt="a simple dove logo"> 
+      </header>-->
+        <div id="desktop">
+          <div id="stanga">
+            <div id="userLogoAndName">
+              <img src="/imgBadgesAndLevels/avatar.png"/>
+              <div id="userName">
+                NumeSmecher
+              </div>
+            </div>
+            <div id="stangaCentru">
+              <div id="st1"></div>
+              <div id="st2"></div>
+            </div>
+            <div id="goBack"></div> 
+          </div>
+          <div id="dreapta">
+          </div>  
+        </div>
+
+
+        <div id="mobil">
+          <div id="sus">
+            <div id="userLogoAndName">
+              <img src="/imgBadgesAndLevels/avatar.png"/>
+              <div id="userName">
+                NumeSmecher
+              </div>
+            </div>
+          </div>
+          <div id="jos">
+              <div id="jos1">
+                <img id="badge1" src="imgBadgesAndLevels/badges/badge1.jpg"/ onclick="afisareDetaliiBadge()">
+                <div id="detaliiBadge1">
+                  <div id="mesajBadge1">
+                  </div>
+                  <img id="x" src="imgBadgesAndLevels/badges/x.png" onclick="inchidereDetaliiBadge()"/>
+                </div>
+              </div>
+              <div id="jos2">
+                
+              </div>
+          </div>  
+          <div id="footer">
+
+          </div>
+        </div>
+        
+      <!--<footer>
+        Created by Pavel Silviu.<a href="http://game-icons.net/lorc/originals/dove.html">Inovation</a> is everything.</p> 
+      </footer>-->
+  </body>
+  <script>
+    function afisareDetaliiBadge(){
+      var scurtatura=document.getElementById("detaliiBadge1");
+      var scrt2=document.getElementById("mesajBadge1");
+      var scrt3=document.getElementById("x")
+      scurtatura.style.display="flex";
+      // scurtatura.setAttribute('style', 'align-items:center;');
+      scrt2.innerHTML = "Manevraaa. Te iubesc!";
+      scrt2.style.display="block";
+      scrt3.style.display="block";
+    }
+    function inchidereDetaliiBadge(){
+      var a=document.getElementById("detaliiBadge1");
+      a.style.display="none";
+    }
+  </script>
+</html>
