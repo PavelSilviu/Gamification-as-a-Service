@@ -41,16 +41,21 @@
             </div>
           </div>
           <div id="jos">
-              <div id="jos1">
-                <img id="badge1" src="imgBadgesAndLevels/badges/badge1.jpg"/ onclick="afisareDetaliiBadge()">
-                <div id="detaliiBadge1">
-                  <div id="mesajBadge1">
+              <div class="josElement" id="jos1">
+                <img class="badge" id="badge1" src="imgBadgesAndLevels/badges/newbie.png"/ onclick="afisareDetaliiBadge1()">
+                <div class="detaliiBadge" id="detaliiBadge1">
+                  <div class="mesajBadge" id="mesajBadge1">
                   </div>
-                  <img id="x" src="imgBadgesAndLevels/badges/x.png" onclick="inchidereDetaliiBadge()"/>
+                  <img id="x" src="imgBadgesAndLevels/badges/x.png" onclick="inchidereDetaliiBadge1()"/>
                 </div>
               </div>
-              <div id="jos2">
-                
+              <div class="josElement" id="jos2">
+                <img class="badge" id="badge2" src="imgBadgesAndLevels/badges/lurker.png"/ onclick="afisareDetaliiBadge2()">
+                <div class="detaliiBadge" id="detaliiBadge2">
+                  <div class="mesajBadge" id="mesajBadge2">
+                  </div>
+                  <img id="x" src="imgBadgesAndLevels/badges/x.png" onclick="inchidereDetaliiBadge2()"/>
+                </div>
               </div>
           </div>  
           <div id="footer">
@@ -63,18 +68,33 @@
       </footer>-->
   </body>
   <script>
-    function afisareDetaliiBadge(){
+    function afisareDetaliiBadge1(){
       var scurtatura=document.getElementById("detaliiBadge1");
       var scrt2=document.getElementById("mesajBadge1");
       var scrt3=document.getElementById("x")
       scurtatura.style.display="flex";
       // scurtatura.setAttribute('style', 'align-items:center;');
-      scrt2.innerHTML = "Manevraaa. Te iubesc!";
+      scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
       scrt2.style.display="block";
       scrt3.style.display="block";
     }
-    function inchidereDetaliiBadge(){
+    function inchidereDetaliiBadge1(){
       var a=document.getElementById("detaliiBadge1");
+      a.style.display="none";
+    }
+
+    function afisareDetaliiBadge2(){
+      var scurtatura=document.getElementById("detaliiBadge2");
+      var scrt2=document.getElementById("mesajBadge2");
+      var scrt3=document.getElementById("x")
+      scurtatura.style.display="flex";
+      // scurtatura.setAttribute('style', 'align-items:center;');
+      scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
+      scrt2.style.display="block";
+      scrt3.style.display="block";
+    }
+    function inchidereDetaliiBadge2(){
+      var a=document.getElementById("detaliiBadge2");
       a.style.display="none";
     }
   </script>
