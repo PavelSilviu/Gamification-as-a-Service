@@ -172,7 +172,7 @@ html{
       border-bottom: 1px;
       border-bottom-style:solid;
       border-bottom-color:white;
-      height: 30%;
+      height: 23%;
     }
     #dreapta{
       display: flex;
@@ -280,7 +280,7 @@ html{
     border-bottom: 1px;
     border-bottom-style:solid;
     border-bottom-color:white;
-    height: 30%;
+    height: 23%;
   }
   #dreapta{
     display: flex;
@@ -348,7 +348,7 @@ html{
     width: 100%;
   }
   #userLogoAndName img{
-    width: 40%;
+    width: 100px;
     height: auto;
   }
   #userName {
@@ -388,7 +388,7 @@ html{
     border-bottom: 1px;
     border-bottom-style:solid;
     border-bottom-color:white;
-    height: 30%;
+    height: 23%;
   }
   #dreapta{
     display: flex;
@@ -400,8 +400,8 @@ html{
     height: 100%;
   }
   .badge{
-    width:200px;
-    height: 200px;
+    width:150px;
+    height: 150px;
   }
   .detaliiBadge{
     /* position: fixed; */
