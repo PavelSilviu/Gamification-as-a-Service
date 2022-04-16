@@ -60,11 +60,11 @@ html{
     border-bottom: 1px;
     border-bottom-style:solid;
     border-bottom-color:green;
-    height: 50%;
+    height: 25%;
   }
   .badge{
-    width:200px;
-    height: auto;
+    width:120px;
+    height: 120px;
   }
   #jos{
     display: flex;
@@ -76,9 +76,10 @@ html{
     height: 80%;
   }
   .detaliiBadge{
+    position: fixed;
     width: 100%;
     display: none;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     color:white;
     background-image: linear-gradient(to right, #2D9282 , #0DAA52);
@@ -138,13 +139,15 @@ html{
       width:60%;
       text-align:center;
       font-weight:700;
+      padding: 4px;
+      font-size: 13px;
     }
     #stangaCentru{
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: 40%;
+      height: 80%;
       width: 100%;
     }
     #goBack{
@@ -154,30 +157,58 @@ html{
     #stanga{
       display: flex;
       flex-direction: column;
-      justify-content:center;
+      justify-content:flex-start;
       align-items: center;
       background-color: green;
       width:30%;
       height: 100%;
     }
-    #st1{
+    .stElement{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       width:90%;
       border-bottom: 1px;
       border-bottom-style:solid;
       border-bottom-color:white;
-      height: 10%;
-    }
-    #st2{
-      width:90%;
-      border-bottom: 1px;
-      border-bottom-style:solid;
-      border-bottom-color:white;
-      height: 10%;
+      height: 30%;
     }
     #dreapta{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       background-color: white;
       width:70%;
       height: 100%;
+    }
+    .badge{
+      width:80px;
+      height: 80px;
+    }
+    .detaliiBadge{
+      /* position: fixed; */
+      width: 80%;
+      height:200px;
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      color:white;
+      background-image: linear-gradient(to right, #2D9282 , #0DAA52);
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+    .mesajBadge{
+      padding:5px;
+    }
+    .x{
+      padding: 5px;
+      height: 10px;
+      width:10px;
     }
 }
 /* small screens, laptops */
@@ -217,13 +248,14 @@ html{
     width:60%;
     text-align:center;
     font-weight:700;
+    padding: 4px;
   }
   #stangaCentru{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 40%;
+    height: 80%;
     width: 100%;
   }
   #goBack{
@@ -233,30 +265,58 @@ html{
   #stanga{
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
     background-color: green;
     width:30%;
     height: 100%;
   }
-  #st1{
+  .stElement{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width:90%;
     border-bottom: 1px;
     border-bottom-style:solid;
     border-bottom-color:white;
-    height: 10%;
-  }
-  #st2{
-    width:90%;
-    border-bottom: 1px;
-    border-bottom-style:solid;
-    border-bottom-color:white;
-    height: 10%;
+    height: 30%;
   }
   #dreapta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     width:70%;
     height: 100%;
+  }
+  .badge{
+    width:140px;
+    height: 140px;
+  }
+  .detaliiBadge{
+    /* position: fixed; */
+    width: 80%;
+    height:200px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    color:white;
+    background-image: linear-gradient(to right, #2D9282 , #0DAA52);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+  }
+  .mesajBadge{
+    padding:5px;
+  }
+  #x{
+    padding: 5px;
+    height: 10px;
+    width:10px;
   }
 }
 /* desktops, large screens */
@@ -296,13 +356,14 @@ html{
     width:60%;
     text-align:center;
     font-weight:700;
+    padding: 4px;
   }
   #stangaCentru{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 40%;
+    height: 80%;
     width: 100%;
   }
   #goBack{
@@ -312,29 +373,57 @@ html{
   #stanga{
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
     background-color: green;
     width:30%;
     height: 100%;
   }
-  #st1{
+  .stElement{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width:90%;
     border-bottom: 1px;
     border-bottom-style:solid;
     border-bottom-color:white;
-    height: 10%;
-  }
-  #st2{
-    width:90%;
-    border-bottom: 1px;
-    border-bottom-style:solid;
-    border-bottom-color:white;
-    height: 10%;
+    height: 30%;
   }
   #dreapta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     width:70%;
     height: 100%;
+  }
+  .badge{
+    width:200px;
+    height: 200px;
+  }
+  .detaliiBadge{
+    /* position: fixed; */
+    width: 80%;
+    height:200px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    color:white;
+    background-image: linear-gradient(to right, #2D9282 , #0DAA52);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+  }
+  .mesajBadge{
+    padding:5px;
+  }
+  #x{
+    padding: 5px;
+    height: 10px;
+    width:10px;
   }
 }
