@@ -17,4 +17,9 @@ Atașat în acest repo se regăsesc următoarele:
 			</li>
 		</ul>
 	</li>
+	<li>De mentionat!
+		<ul>
+			<li>In cadrul proiectului s-au folosit doar imagini open source, ce pot fi folosite inclusiv in scop comercial. Sursa imaginilor care nu sunt de pe undraw.co este Canva.com care mentioneaza clar acest lucru (imagini de pe Canva au fost folosite în design-urile de badge-uri realizate de noi în Photoshop)</li>
+		</ul>
+	</li>
 </ul>
