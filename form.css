@@ -54,9 +54,11 @@ input[type=radio] {
   justify-content: space-between;
 }
 .camp{
-  border:1px solid;
-  border-color: aqua;
-  border-radius:10px;
+  border-left:0;
+  border-bottom: green ;
+ border-style: dotted;
+ border-right:0;
+ border-top:0;
 }
 .formdiv{
 
@@ -133,7 +135,20 @@ display:none;
   display:inline-block; 
   
 }
-
+.addbtn{
+  border-radius:25px;
+  color:green;
+  background-color: white;
+  border-color: #0DAA52;
+  margin:2px;
+}
+.removebtn{
+  border-radius:25px;
+  color:green;
+  background-color: white;
+  border-color: #0DAA52;
+  margin:2px;
+}
 
 @media screen and (max-width:480px)
 {
