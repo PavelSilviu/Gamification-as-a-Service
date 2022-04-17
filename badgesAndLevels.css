@@ -76,6 +76,7 @@ html{
     height: 80%;
   }
   .detaliiBadge{
+    font-size:12px;
     position: fixed;
     width: 80%;
     display: none;
