@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>form</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="form.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+  <div class="profile">
+    <img src="./imagesUserHome/avatar1.png">
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content">
+        <button onclick="location.href='UserHome.html'" class="dropbtn">User</button>
+        <button onclick="location.href='login.html'" class="dropbtn">LogOut</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content">
+    <div class="options">
+      <div class="label">
+        <label for="btn1">Badge:</label>
+        <input type="radio" id="btn1" name="choose" />
+      </div>
+      <div class="label">
+        <label for="btn2">Levels:</label>
+        <input type="radio" id="btn2" name="choose" />
+      </div>
+    </div>
+
+
+
+    <div class="formdiv">
+      <form action="UserHome.html" id="form1" class="form1">
+        <div class="form-title">
+          BADGE
+        </div>
+        <div id="camp" class="camp">
+          <label for="badgename">BadgeName</label>
+          <input name="Badge" id="badgename" type="text" />
+
+          <label for="badgefunction">Event</label>
+          <input type="text" id="badgefunction" name="Function" />
+        </div>
+
+        <div id="buttons" class="buttons">
+          <button id="addbtn1" type="button" class="addbtn1">Add</button>
+          <button id="removebtn1" type="button" class="removebtn1">Remove</button>
+        </div>
+
+        <input type="submit" />
+      </form>
+    </div>
+    <div class="formdiv">
+      <form action="UserHome.html" id="form2" class="form2">
+        <div class="form-title">
+          Level
+        </div>
+        <div id="campp" class="camp">
+          <label for="Level">Level 1</label>
+          <input name="Level" id="Level" type="text" />
+          <label for="badgefunction">Points</label>
+          <input type="text" id="Points" name="Function" />
+          <label for="badgefunction">ActionForPoints</label>
+          <input type="text" id="ActionForPoints" name="Function" />
+        </div>
+
+        <div id="buttons1" class="buttons">
+          <button id="addbtn2" type="button" class="addbtn2">Add</button>
+          <button id="removebtn2" type="button" class="removebtn2">Remove</button>
+        </div>
+
+        <input type="submit" />
+      </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+</html>
