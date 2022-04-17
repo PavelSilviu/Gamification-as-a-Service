@@ -177,7 +177,7 @@ html{
     }
     #dreapta{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: white;
@@ -285,7 +285,7 @@ html{
   }
   #dreapta{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
@@ -393,7 +393,7 @@ html{
   }
   #dreapta{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
