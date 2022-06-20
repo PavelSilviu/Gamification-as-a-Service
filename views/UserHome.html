@@ -14,7 +14,7 @@
           <li><a class="active" href="#home">Home</a></li>
           <li><a href="userDetails.html">User Details</a></li>
           <!-- <li><a href="login.html">LogOut</a></li> -->
-          <li style="float:right"><a href="login.html">LogOut</a></li>
+          <li style="float:right"><a href="login.html" onclick="Deconectare()">LogOut</a></li>
         </ul>
         </div>
         
@@ -28,4 +28,9 @@
       <img src="../images/pic1.png" alt="" class="logo">
     </div>
   </body>
+  <script>
+    function Deconectare() {
+        localStorage.removeItem("logat");
+    }
+  </Script>
   </html>
