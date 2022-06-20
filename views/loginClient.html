@@ -8,13 +8,8 @@
   </head>
 
   <body>
-      <!--<header>
-        <h1></h1>
-        <img src="dove.png" alt="a simple dove logo"> 
-      </header>-->
-
         <div id="div-login-form">
-          <form action="UserHome.html" id="login-form">
+          <form id="login-form" action="http://127.0.0.1:8081/login" method="POST">
             <div id="form-title">
               LOGIN
             </div>
@@ -22,8 +17,9 @@
               Please enter your credentials to login
             </div>
             <input type="text" id="username" name="username" placeholder="Username">
+            <div id="userInvalid"></div>
             <input type="text" id="password" name="password" placeholder="Password">
-            <input type="submit" value="LOGIN">
+            <input type="submit" id="submitButton" value="LOGIN">
             <div id="form-not-reg">
               <div id="form-not-reg1">
                 Not registered?
@@ -36,8 +32,7 @@
           </form>
         </div>
 
-      <!--<footer>
-        Created by Pavel Silviu.<a href="http://game-icons.net/lorc/originals/dove.html">Inovation</a> is everything.</p> 
-      </footer>-->
+        <script type="text/javascript" src="loginClient.js">
+        </script>
   </body>
 </html>

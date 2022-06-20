@@ -1,21 +1,21 @@
-<!DOCTYPE  html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UserHome</title>
-    <link rel="stylesheet" href="UserHome.css">
+    <link href="UserHome.css" rel="stylesheet">
   </head>
   <body>
     <div class="header">
         <div class="headerRight">
           <ul>
-          <li><img src="../images/avatar1.png" alt="Avatar" class="avatar"> </li>
+          <li><img src="avatar1.png" alt="Avatar" class="avatar"> </li>
           <li><a class="active" href="#home">Home</a></li>
           <li><a href="userDetails.html">User Details</a></li>
           <!-- <li><a href="login.html">LogOut</a></li> -->
-          <li style="float:right"><a href="login.html">LogOut</a></li>
-        </ul>
+          <li style="float:right"><a href="login.html" onclick="Deconectare()">LogOut</a></li>
+          </ul>
         </div>
         
     </div>
@@ -25,7 +25,12 @@
         <button onclick="location.href='form.html'" class="site2">Add site</button>
     </div>
     <div class="footer">
-      <img src="../images/pic1.png" alt="" class="logo">
+      <img src="pic1.png" alt="" class="logo">
     </div>
+    <script>
+      function Deconectare() {
+          localStorage.removeItem("logat");
+      }
+    </Script>
   </body>
-  </html>
+</html>
