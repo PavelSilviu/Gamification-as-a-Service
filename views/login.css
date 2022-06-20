@@ -12,9 +12,18 @@ body{
     margin: 0px;
     padding: 0px;
 }
+
+#user_gresit, #parola_gresita {
+  color: red;
+  font-size: 12px;
+  padding-left: 5px;
+  visibility: hidden;
+}
+
+
 /* telefon */
 @media only screen and (max-width:481px)  {
-    input[type=text] {
+    input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -26,7 +35,7 @@ body{
         box-sizing: border-box;
       }
       
-      input[type=submit] {
+      input[type=button] {
         width: 100%;
         background-image: linear-gradient(to right, #2D9282 , #0DAA52);
         color: white;
@@ -78,7 +87,7 @@ body{
 }
 /* tableta */
 @media only screen and (min-width:481px)  {
-    input[type=text] {
+    input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -90,7 +99,7 @@ body{
         box-sizing: border-box;
       }
       
-      input[type=submit] {
+      input[type=button] {
         width: 100%;
         background-image: linear-gradient(to right, #2D9282 , #0DAA52);
         color: white;
@@ -142,7 +151,7 @@ body{
 }
 /* small screens, laptops */
 @media only screen and (min-width:769px)  {
-    input[type=text] {
+    input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -154,7 +163,7 @@ body{
         box-sizing: border-box;
       }
       
-      input[type=submit] {
+      input[type=button] {
         width: 100%;
         background-image: linear-gradient(to right, #2D9282 , #0DAA52);
         color: white;
@@ -206,7 +215,7 @@ body{
 }
 /* desktops, large screens */
 @media only screen and (min-width:1200px){
-    input[type=text] {
+    input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -218,7 +227,7 @@ body{
         box-sizing: border-box;
       }
       
-      input[type=submit] {
+      input[type=button] {
         width: 100%;
         background-image: linear-gradient(to right, #2D9282 , #0DAA52);
         color: white;
