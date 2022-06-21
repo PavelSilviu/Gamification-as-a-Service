@@ -71,6 +71,71 @@ function deleteUser(name) {
     });
 }
 
+
+function insertBadge() {
+    var sql = "INSERT INTO badges (nameBadge, action, start) VALUES ('eliminare', 'elimin elementul cutare', '423')";
+    db.query(sql, (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        console.log("Number of records inserted:" + result.affectedRows);
+      }
+    });
+}
+
+function allBadges () {
+    return new Promise((resolve, reject) => {
+        var sql = `SELECT * FROM badges`;
+
+        db.query(sql,(error, results, fields) => {
+            var result;
+            if (results.length == 0) {
+                console.log("nu exista");
+                result = "nu exista badge-ul";
+            }
+            else {
+                results = JSON.parse(JSON.stringify(results));
+                result = results;
+            }
+            console.log(result);
+            return error? reject(error):resolve(result);
+        });
+    });
+}
+
+function insertLevels() {
+    var sql = "INSERT INTO levels (NameLevel, Level1, XP) VALUES ('nivel1', '123 puncte', '12')";
+    db.query(sql, (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        console.log("Number of records inserted:" + result.affectedRows);
+      }
+    });
+}
+
+function allLevels () {
+    return new Promise((resolve, reject) => {
+        var sql = `SELECT * FROM levels`;
+
+        db.query(sql,(error, results, fields) => {
+            var result;
+            if (results.length == 0) {
+                console.log("nu exista");
+                result = "nu exista level-ul";
+            }
+            else {
+                results = JSON.parse(JSON.stringify(results));
+                result = results;
+            }
+            console.log(result);
+            return error? reject(error):resolve(result);
+        });
+    });
+}
+
 // conectarea la database
 db.connect((err) => {
     if (err) {
@@ -79,8 +144,16 @@ db.connect((err) => {
     else {
         console.log("Mysql connected...");
     }
+
+    //insertBadge();
+
+    //allBadges();
+
+    //insertLevels();
+
+    //allLevels();
     
-    allUsers();
+    //allUsers();
 
     //insertUser();
     
@@ -93,4 +166,4 @@ db.connect((err) => {
 
 
 
-module.exports = {findUser, allUsers, deleteUser};
+module.exports = {findUser, allUsers, deleteUser, allBadges, allBadges, allLevels};
