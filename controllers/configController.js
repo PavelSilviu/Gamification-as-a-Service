@@ -1,4 +1,4 @@
-const pool=require("../Model/util/db").pool;
+const pool=require("../model/util/db").pool;
 const config=require("../config");
 
 users=["test","Alin","Mihai","Matei"];
