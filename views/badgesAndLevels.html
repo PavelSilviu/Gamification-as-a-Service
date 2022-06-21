@@ -2,232 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Levels</title>
     <link href="badgesAndLevels.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-      <!--<header>
-        <h1></h1>
-        <img src="dove.png" alt="a simple dove logo"> 
-      </header>-->
         <div id="desktop">
           <div id="stanga">
-            <div id="userLogoAndName">
-              <img src="../images/avatar1.png"/>
-              <div id="userName">
-                NumeSmecher
-              </div>
-            </div>
-            <div id="stangaCentru">
-              <div class="stElement" id="st1">
-                <img class="badge" id="badge1Desk" src="../images/badges/newbie.png" onclick="afisareDetaliiBadge1Desk()">
-              </div>
-              <div class="stElement" id="st2">
-                <img class="badge" id="badge2Desk" src="../images/badges/lurker.png" onclick="afisareDetaliiBadge2Desk()">
-              </div>
-              <div class="stElement" id="st3">
-                <img class="badge" id="badge3Desk" src="../images/badges/squire.png" onclick="afisareDetaliiBadge3Desk()">
-              </div>
-              <div class="stElement" id="st4">
-                <img class="badge" id="badge4Desk" src="../images/badges/lurker.png" onclick="afisareDetaliiBadge4Desk()">
-              </div>
-            </div>
-            <!-- <div id="goBack"></div>  -->
+            <div class="title">Levels</div>
           </div>
+
+
           <div id="dreapta">
-            <div class="detaliiBadge" id="detaliiBadge1Desk">
-              <div class="mesajBadge" id="mesajBadge1Desk">
-              </div>
-              <img class="x" id="xDesk1" src="../images/badges/x.png" onclick="inchidereDetaliiBadge1Desk()"/>
-            </div>
-            <div class="detaliiBadge" id="detaliiBadge2Desk">
-              <div class="mesajBadge" id="mesajBadge2Desk">
-              </div>
-              <img class="x" id="xDesk2" src="../images/badges/x.png" onclick="inchidereDetaliiBadge2Desk()"/>
-            </div>
-            <div class="detaliiBadge" id="detaliiBadge3Desk">
-              <div class="mesajBadge" id="mesajBadge3Desk">
-              </div>
-              <img class="x" id="xDesk3" src="../images/badges/x.png" onclick="inchidereDetaliiBadge3Desk()"/>
-            </div>
-            <div class="detaliiBadge" id="detaliiBadge4Desk">
-              <div class="mesajBadge" id="mesajBadge4Desk">
-              </div>
-              <img class="x" id="xDesk4" src="../images/badges/x.png" onclick="inchidereDetaliiBadge4Desk()"/>
-            </div>
+            
           </div>  
         </div>
-
-
-        <div id="mobil">
-          <div id="sus">
-            <div id="userLogoAndName">
-              <img src="../images/avatar1.png"/>
-              <div id="userName">
-                NumeSmecher
-              </div>
-            </div>
-          </div>
-          <div id="jos">
-              <div class="josElement" id="jos1">
-                <img class="badge" id="badge1" src="../images/badges/newbie.png" onclick="afisareDetaliiBadge1()">
-                <div class="detaliiBadge" id="detaliiBadge1">
-                  <div class="mesajBadge" id="mesajBadge1">
-                  </div>
-                  <img class="x" id="x" src="../images/badges/x.png" onclick="inchidereDetaliiBadge1()"/>
-                </div>
-              </div>
-              <div class="josElement" id="jos2">
-                <img class="badge" id="badge2" src="../images/badges/lurker.png" onclick="afisareDetaliiBadge2()">
-                <div class="detaliiBadge" id="detaliiBadge2">
-                  <div class="mesajBadge" id="mesajBadge2">
-                  </div>
-                  <img class="x" id="x" src="../images/badges/x.png" onclick="inchidereDetaliiBadge2()"/>
-                </div>
-              </div>
-              <div class="josElement" id="jos3">
-                <img class="badge" id="badge3" src="../images/badges/squire.png" onclick="afisareDetaliiBadge3()">
-                <div class="detaliiBadge" id="detaliiBadge3">
-                  <div class="mesajBadge" id="mesajBadge3">
-                  </div>
-                  <img class="x" id="x" src="../images/badges/x.png" onclick="inchidereDetaliiBadge3()"/>
-                </div>
-              </div>
-              <div class="josElement" id="jos4">
-                <img class="badge" id="badge4" src="../images/badges/grand-master.png" onclick="afisareDetaliiBadge4()">
-                <div class="detaliiBadge" id="detaliiBadge4">
-                  <div class="mesajBadge" id="mesajBadge4">
-                  </div>
-                  <img class="x" id="x" src="../images/badges/x.png" onclick="inchidereDetaliiBadge4()"/>
-                </div>
-              </div>
-          </div>  
-          <div id="footer">
-
-          </div>
-        </div>
-        
-      <!--<footer>
-        Created by Pavel Silviu.<a href="http://game-icons.net/lorc/originals/dove.html">Inovation</a> is everything.</p> 
-      </footer>-->
   </body>
+  <script src="./bagesAndlevels.js"></script>
   <script>
-    function afisareDetaliiBadge1(){
-      var scurtatura=document.getElementById("detaliiBadge1");
-      var badge=document.getElementById("badge1");
-      var scrt2=document.getElementById("mesajBadge1");
-      var scrt3=document.getElementById("x")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge1(){
-      var a=document.getElementById("detaliiBadge1");
-      a.style.display="none";
-    }
-    function afisareDetaliiBadge1Desk(){
-      var scurtatura=document.getElementById("detaliiBadge1Desk");
-      var badge=document.getElementById("badge1Desk");
-      var scrt2=document.getElementById("mesajBadge1Desk");
-      var scrt3=document.getElementById("xDesk1")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge1Desk(){
-      var a=document.getElementById("detaliiBadge1Desk");
-      a.style.display="none";
-    }
+    // function afisareDetaliiBadge1(){
+    //   var scurtatura=document.getElementById("detaliiBadge1");
+    //   var badge=document.getElementById("badge1");
+    //   var scrt2=document.getElementById("mesajBadge1");
+    //   var scrt3=document.getElementById("x")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge1(){
+    //   var a=document.getElementById("detaliiBadge1");
+    //   a.style.display="none";
+    // }
+    // function afisareDetaliiBadge1Desk(){
+    //   var scurtatura=document.getElementById("detaliiBadge1Desk");
+    //   var badge=document.getElementById("badge1Desk");
+    //   var scrt2=document.getElementById("mesajBadge1Desk");
+    //   var scrt3=document.getElementById("xDesk1")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge1Desk(){
+    //   var a=document.getElementById("detaliiBadge1Desk");
+    //   a.style.display="none";
+    // }
 
-    function afisareDetaliiBadge2(){
-      var scurtatura=document.getElementById("detaliiBadge2");
-      var badge=document.getElementById("badge2");
-      var scrt2=document.getElementById("mesajBadge2");
-      var scrt3=document.getElementById("x")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge2(){
-      var a=document.getElementById("detaliiBadge2");
-      a.style.display="none";
-    }
-    function afisareDetaliiBadge2Desk(){
-      var scurtatura=document.getElementById("detaliiBadge2Desk");
-      var badge=document.getElementById("badge2Desk");
-      var scrt2=document.getElementById("mesajBadge2Desk");
-      var scrt3=document.getElementById("xDesk2")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge2Desk(){
-      var a=document.getElementById("detaliiBadge2Desk");
-      a.style.display="none";
-    }
+    // function afisareDetaliiBadge2(){
+    //   var scurtatura=document.getElementById("detaliiBadge2");
+    //   var badge=document.getElementById("badge2");
+    //   var scrt2=document.getElementById("mesajBadge2");
+    //   var scrt3=document.getElementById("x")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge2(){
+    //   var a=document.getElementById("detaliiBadge2");
+    //   a.style.display="none";
+    // }
+    // function afisareDetaliiBadge2Desk(){
+    //   var scurtatura=document.getElementById("detaliiBadge2Desk");
+    //   var badge=document.getElementById("badge2Desk");
+    //   var scrt2=document.getElementById("mesajBadge2Desk");
+    //   var scrt3=document.getElementById("xDesk2")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge2Desk(){
+    //   var a=document.getElementById("detaliiBadge2Desk");
+    //   a.style.display="none";
+    // }
 
-    function afisareDetaliiBadge3(){
-      var scurtatura=document.getElementById("detaliiBadge3");
-      var badge=document.getElementById("badge3");
-      var scrt2=document.getElementById("mesajBadge3");
-      var scrt3=document.getElementById("x")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul SQUIRE! SQUIRE este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge3(){
-      var a=document.getElementById("detaliiBadge3");
-      a.style.display="none";
-    }
-    function afisareDetaliiBadge3Desk(){
-      var scurtatura=document.getElementById("detaliiBadge3Desk");
-      var badge=document.getElementById("badge3Desk");
-      var scrt2=document.getElementById("mesajBadge3Desk");
-      var scrt3=document.getElementById("xDesk3")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul  SQUIRE!  SQUIRE este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge3Desk(){
-      var a=document.getElementById("detaliiBadge3Desk");
-      a.style.display="none";
-    }
+    // function afisareDetaliiBadge3(){
+    //   var scurtatura=document.getElementById("detaliiBadge3");
+    //   var badge=document.getElementById("badge3");
+    //   var scrt2=document.getElementById("mesajBadge3");
+    //   var scrt3=document.getElementById("x")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul SQUIRE! SQUIRE este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge3(){
+    //   var a=document.getElementById("detaliiBadge3");
+    //   a.style.display="none";
+    // }
+    // function afisareDetaliiBadge3Desk(){
+    //   var scurtatura=document.getElementById("detaliiBadge3Desk");
+    //   var badge=document.getElementById("badge3Desk");
+    //   var scrt2=document.getElementById("mesajBadge3Desk");
+    //   var scrt3=document.getElementById("xDesk3")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul  SQUIRE!  SQUIRE este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge3Desk(){
+    //   var a=document.getElementById("detaliiBadge3Desk");
+    //   a.style.display="none";
+    // }
 
-    function afisareDetaliiBadge4(){
-      var scurtatura=document.getElementById("detaliiBadge4");
-      var badge=document.getElementById("badge4");
-      var scrt2=document.getElementById("mesajBadge4");
-      var scrt3=document.getElementById("x")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul GRAND MASTER! GRAND MASTER este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge4(){
-      var a=document.getElementById("detaliiBadge4");
-      a.style.display="none";
-    }
-    function afisareDetaliiBadge4Desk(){
-      var scurtatura=document.getElementById("detaliiBadge4Desk");
-      var badge=document.getElementById("badge4Desk");
-      var scrt2=document.getElementById("mesajBadge4Desk");
-      var scrt3=document.getElementById("xDesk4")
-      scurtatura.style.display="flex";
-      scrt2.innerHTML = "Ai deblocat nivelul GRAND MASTER! GRAND MASTER este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-      scrt2.style.display="block";
-      scrt3.style.display="block";
-    }
-    function inchidereDetaliiBadge4Desk(){
-      var a=document.getElementById("detaliiBadge4Desk");
-      a.style.display="none";
-    }
+    // function afisareDetaliiBadge4(){
+    //   var scurtatura=document.getElementById("detaliiBadge4");
+    //   var badge=document.getElementById("badge4");
+    //   var scrt2=document.getElementById("mesajBadge4");
+    //   var scrt3=document.getElementById("x")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul GRAND MASTER! GRAND MASTER este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge4(){
+    //   var a=document.getElementById("detaliiBadge4");
+    //   a.style.display="none";
+    // }
+    // function afisareDetaliiBadge4Desk(){
+    //   var scurtatura=document.getElementById("detaliiBadge4Desk");
+    //   var badge=document.getElementById("badge4Desk");
+    //   var scrt2=document.getElementById("mesajBadge4Desk");
+    //   var scrt3=document.getElementById("xDesk4")
+    //   scurtatura.style.display="flex";
+    //   scrt2.innerHTML = "Ai deblocat nivelul GRAND MASTER! GRAND MASTER este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
+    //   scrt2.style.display="block";
+    //   scrt3.style.display="block";
+    // }
+    // function inchidereDetaliiBadge4Desk(){
+    //   var a=document.getElementById("detaliiBadge4Desk");
+    //   a.style.display="none";
+    // }
   </script>
 </html>

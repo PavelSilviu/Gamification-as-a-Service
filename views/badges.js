@@ -1,119 +1,85 @@
-function afisareDetaliiBadge1(){
-    var scurtatura=document.getElementById("detaliiBadge1");
-    var badge=document.getElementById("badge1");
-    var scrt2=document.getElementById("mesajBadge1");
-    var scrt3=document.getElementById("x")
-    scurtatura.style.display="flex";
-    // scrt2.innerHTML = "Ai deblocat nivelul NEWBIE! Acest nivel se acorda userilor cu o vechime intre 1 si 30 de zile. Acestia sunt useri novice, fara experienta";
-    scrt2.innerHTML = "Ai deblocat insigna FirstTime! Aceasta ti-a fost acordata deoarece ai avut curajul sa incepi o noua aventura pe acest site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge1(){
-    var a=document.getElementById("detaliiBadge1");
-    a.style.display="none";
-  }
-  function afisareDetaliiBadge1Desk(){
-    var scurtatura=document.getElementById("detaliiBadge1Desk");
-    var badge=document.getElementById("badge1Desk");
-    var scrt2=document.getElementById("mesajBadge1Desk");
-    var scrt3=document.getElementById("xDesk1")
-    scurtatura.style.display="flex";
-    scrt2.innerHTML = "Ai deblocat insigna FirstTime! Aceasta ti-a fost acordata deoarece ai avut curajul sa incepi o noua aventura pe acest site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge1Desk(){
-    var a=document.getElementById("detaliiBadge1Desk");
-    a.style.display="none";
+const div_stg = document.getElementById("stanga");
+
+
+
+
+var badges=[];
+function getData(){
+  xmlhttp= new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange=function(){
+    if(xmlhttp.readyState==4){
+      badges=JSON.parse(xmlhttp.responseText);
+    };
+  };
+  xmlhttp.open("GET","/badges/GET",false);
+  xmlhttp.send();
+};
+$(document).ready(getData()) ;
+
+
+
+
+
+function createBadge (id) {
+  console.log(badges);
+    var button = document.createElement("button");
+
+    
+    button.id = id;
+    button.className = "level-div";
+    button.innerText = badges[id].NameBadge;
+
+    var onClick = () => {
+      var ok = 0;
+      const div_dr = document.getElementById("dreapta");
+
+      if (ok == 1) {
+          console.log("1");
+          ok = 0;
+          const div = document.getElementById(`descriere${id}`);
+          //div.remove();
+      }
+      else {
+        var ceva = document.getElementsByClassName(`descriere`);
+        if (ceva != null) {
+          stergeDetalii();
+        }
+        console.log("0");
+        ok = 1;
+        var div = document.createElement("div");
+        div.id = `descriere${id}`;
+        div.className = "descriere";
+
+        var div_action = document.createElement("div");
+        div_action.innerText = badges[id].Action;
+
+        var div_amount = document.createElement("div");
+        div_amount.innerText = badges[id].Start;
+
+        div.appendChild(div_amount);
+        div.appendChild(div_action);
+
+        div_dr.appendChild(div);
+      }
+        
+    }
+
+    button.onclick = onClick;
+
+    div_stg.appendChild(button);
+}
+
+function stergeDetalii() {
+  for (i = 0; i <= badges.length; i++) {
+    const div = document.getElementById(`descriere${i}`);
+    if (div != null)div.remove();
   }
 
-  function afisareDetaliiBadge2(){
-    var scurtatura=document.getElementById("detaliiBadge2");
-    var badge=document.getElementById("badge2");
-    var scrt2=document.getElementById("mesajBadge2");
-    var scrt3=document.getElementById("x")
-    scurtatura.style.display="flex";
-    //scrt2.innerHTML = "Ai deblocat nivelul LURKER! Lurker este un membru al unei comunități online care observă dar nu participă în mod activ";
-    scrt2.innerHTML = "Ai deblocat insigna SerialConnecter! Aceasta ti-a fost acordata pentru ca te-ai conectat timp de 7 zile pe acelasi site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge2(){
-    var a=document.getElementById("detaliiBadge2");
-    a.style.display="none";
-  }
-  function afisareDetaliiBadge2Desk(){
-    var scurtatura=document.getElementById("detaliiBadge2Desk");
-    var badge=document.getElementById("badge2Desk");
-    var scrt2=document.getElementById("mesajBadge2Desk");
-    var scrt3=document.getElementById("xDesk2")
-    scurtatura.style.display="flex";
-    scrt2.innerHTML = "Ai deblocat insigna SerialConnecter! Aceasta ti-a fost acordata pentru ca te-ai conectat timp de 7 zile pe acelasi site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge2Desk(){
-    var a=document.getElementById("detaliiBadge2Desk");
-    a.style.display="none";
-  }
+}
 
-  function afisareDetaliiBadge3(){
-    var scurtatura=document.getElementById("detaliiBadge3");
-    var badge=document.getElementById("badge3");
-    var scrt2=document.getElementById("mesajBadge3");
-    var scrt3=document.getElementById("x")
-    scurtatura.style.display="flex";
-    //scrt2.innerHTML = "Ai deblocat nivelul SQUIRE! SQUIRE este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-    scrt2.innerHTML = "Ai deblocat insigna StrikeContinue! Insigna StikeContinue ti-a fost acordata deoarece te-ai conectat pe un site timp de 30 de zile";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge3(){
-    var a=document.getElementById("detaliiBadge3");
-    a.style.display="none";
-  }
-  function afisareDetaliiBadge3Desk(){
-    var scurtatura=document.getElementById("detaliiBadge3Desk");
-    var badge=document.getElementById("badge3Desk");
-    var scrt2=document.getElementById("mesajBadge3Desk");
-    var scrt3=document.getElementById("xDesk3")
-    scurtatura.style.display="flex";
-    scrt2.innerHTML = "Ai deblocat insigna StrikeContinue! Insigna StikeContinue ti-a fost acordata deoarece te-ai conectat pe un site timp de 30 de zile";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge3Desk(){
-    var a=document.getElementById("detaliiBadge3Desk");
-    a.style.display="none";
-  }
 
-  function afisareDetaliiBadge4(){
-    var scurtatura=document.getElementById("detaliiBadge4");
-    var badge=document.getElementById("badge4");
-    var scrt2=document.getElementById("mesajBadge4");
-    var scrt3=document.getElementById("x")
-    scurtatura.style.display="flex";
-    // scrt2.innerHTML = "Ai deblocat nivelul GRAND MASTER! GRAND MASTER este un membru al unei comunități online care observă si participă în mod activ, dar care are o vechime de peste un an";
-    scrt2.innerHTML = "Ai deblocat insigna A talkative person. Aceasta insigna ti-a fost acordata deoarece ti-ai facut curajul sa adaugi primul tau comentariu pe un site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge4(){
-    var a=document.getElementById("detaliiBadge4");
-    a.style.display="none";
-  }
-  function afisareDetaliiBadge4Desk(){
-    var scurtatura=document.getElementById("detaliiBadge4Desk");
-    var badge=document.getElementById("badge4Desk");
-    var scrt2=document.getElementById("mesajBadge4Desk");
-    var scrt3=document.getElementById("xDesk4")
-    scurtatura.style.display="flex";
-    scrt2.innerHTML = "Ai deblocat insigna A talkative person. Aceasta insigna ti-a fost acordata deoarece ti-ai facut curajul sa adaugi primul tau comentariu pe un site";
-    scrt2.style.display="block";
-    scrt3.style.display="block";
-  }
-  function inchidereDetaliiBadge4Desk(){
-    var a=document.getElementById("detaliiBadge4Desk");
-    a.style.display="none";
-  }
+
+for (i = 0; i < badges.length; i++) {
+    createBadge(i);
+}
