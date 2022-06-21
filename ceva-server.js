@@ -1,5 +1,7 @@
 const users = require('./controllers/users-controller');
 
+const varff = "ceva";
+
 const user_controller = require('./controllers/users-controller');
 
 var http=require('http');
@@ -57,7 +59,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/users.css") {
         console.log("Onrouter");
         res.writeHead(302, {
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/users.css'));
         res.end();
@@ -79,7 +81,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/UserHome.css") {
         console.log("UserHome.css");
         res.writeHead(302, {
-            'Content-Type': 'text/html'
+            'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/UserHome.css'));
         res.end();
@@ -106,7 +108,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/login.css") {
         console.log("UserHome.css");
         res.writeHead(302, {
-            'Content-Type': 'text/html'
+            'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/login.css'));
         res.end();
@@ -134,7 +136,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/form.css") {
         console.log("Onrouter");
         res.writeHead(302, {
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/form.css'));
         res.end();
@@ -163,7 +165,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/badgesAndLevels.css") {
         console.log("Onrouter");
         res.writeHead(302, {
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/badgesAndLevels.css'));
         res.end();
@@ -192,7 +194,7 @@ var server = http.createServer(function(req, res) {
     if (req.url == "/views/badges.css") {
         console.log("Onrouter");
         res.writeHead(302, {
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/css'
         });
         res.write(fs.readFileSync('views/badges.css'));
         res.end();
@@ -255,7 +257,14 @@ var server = http.createServer(function(req, res) {
         res.end();
     }
 
-
+    if (req.url == "/images/wave.png") {
+        console.log("Onrouter");
+        res.writeHead(302, {
+            'Content-Type': 'image/png'
+        });
+        res.write(fs.readFileSync('images/wave.png'));
+        res.end();
+    }
 
 
     if (req.url == "/images/avatar.png") {
