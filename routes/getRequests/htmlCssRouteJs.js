@@ -162,6 +162,21 @@ class HandleHtmlCssJs{
               }
           });
         } 
+        else if (req.url === '/views/UserDetails.html') {
+          console.log('request UserDetails')
+          fs.readFile('./views/UserDetails.html', 'utf8', (err, data) => {
+              if (err) {
+                res.writeHead(404, {'Content-Type': 'text/html'});
+                res.end('<html><body>404 Page not found</body></html>');
+                console.error('eroare la readfile');
+                return;
+              }
+              else{
+                res.write(data);
+                res.end();
+              }
+          });
+        } 
         else{
             res.statusCode = 404;
             res.end();
@@ -183,6 +198,21 @@ class HandleHtmlCssJs{
                   res.end();
                 }
             });
+        }
+        else if (req.url === '/login.css') {
+          console.log('requested login css');
+          fs.readFile('./views/loginClient.css', 'utf8', (err, data) => {
+              if (err) {
+                res.writeHead(404, {'Content-Type': 'text/html'});
+                res.end('<html><body>404 Page not found</body></html>');
+                console.error('eroare la readfile');
+                return;
+              }
+              else{
+                res.write(data);
+                res.end();
+              }
+          });
         }
         else if (req.url === '/UserHome.css') {
             console.log('requested UserHome css');
@@ -310,6 +340,22 @@ class HandleHtmlCssJs{
               }
           });
         }
+        else if (req.url.match('userDetails.css')) {
+          console.log('requested UserDetails css');
+          fs.readFile('./views/userDetails.css', 'utf8', (err, data) => {
+              if (err) {
+                res.writeHead(404, {'Content-Type': 'text/html'});
+                res.end('<html><body>404 Page not found</body></html>');
+                console.error('eroare la readfile');
+                return;
+              }
+              else{
+                res.writeHead(200, {'Content-Type': 'text/css'});
+                res.write(data);
+                res.end();
+              }
+          });
+        }
         else{
             res.statusCode = 404;
             res.end();
@@ -332,9 +378,9 @@ class HandleHtmlCssJs{
                 }
             });
         }
-        if(req.url  === '/views/login-validari.js'){
+        else if(req.url  === '/views/login-validari.js'){
           console.log('requested login-validari js');
-          fs.readFile('./views/login-validari.js', 'utf8', (err, data) => {
+          fs.readFile('views/login-validari.js', 'utf8', (err, data) => {
               if (err) {
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.end('<html><body>404 Page not found</body></html>');
@@ -347,7 +393,7 @@ class HandleHtmlCssJs{
               }
           });
         }
-        if(req.url  === '/views/form.js'){
+        else if(req.url  === '/views/form.js'){
           console.log('requested form js');
           fs.readFile('./views/form.js', 'utf8', (err, data) => {
               if (err) {
@@ -362,7 +408,7 @@ class HandleHtmlCssJs{
               }
           });
         }
-        if(req.url  === '/views/badges.js'){
+        else if(req.url  === '/views/badges.js'){
           console.log('requested badges js');
           fs.readFile('./views/badges.js', 'utf8', (err, data) => {
               if (err) {

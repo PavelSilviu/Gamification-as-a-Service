@@ -17,6 +17,7 @@ const hostname = '127.0.0.1';
 const port = 8081;
 
 const server = http.createServer((req, res) => {
+  confdata.checkConfig();
   if(req.method === 'GET'){
     if(req.url.match('.html') || req.url.match('.css') || req.url.match('.js')){
         new HandleHtmlCssJs(req,res);
@@ -45,8 +46,7 @@ const server = http.createServer((req, res) => {
   else if (req.url == "/users/DELETE") {
     user_controller.deleteUser(req, res);
   }
-  confdata.checkConfig();
-  if(req.url=="/gams/action" && req.method=="POST")
+  else if(req.url=="/gams/action" && req.method=="POST")
   {
     if(confdata.config.type=="badge")
     badgeact.updateFNC(req,res);

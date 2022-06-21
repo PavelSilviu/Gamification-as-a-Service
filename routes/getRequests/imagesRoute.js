@@ -161,6 +161,22 @@ class HandleImageRoute{
                 }
             });
         }
+        else if (req.url === '/views/wave.png') {
+            console.log('request wave.png')
+            fs.readFile('./images/wave.png', (err, data) => {
+                if (err) {
+                  res.writeHead(404, {'Content-Type': 'image'});
+                  res.end();
+                  console.error('eroare la readfile');
+                  return;
+                }
+                else{
+                  res.writeHead(200, {'Content-Type': 'image/png'});
+                  res.write(data);
+                  res.end();
+                }
+            });
+        }
         else if (req.url === '/x.png') {
             console.log('request x.png')
             fs.readFile('./images/x.png', (err, data) => {
