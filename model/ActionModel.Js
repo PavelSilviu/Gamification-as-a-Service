@@ -2,10 +2,14 @@ const { config } = require('../config');
 
 var pool =require('./util/db').pool;
 
- function  read(actionName) {
+  function  read(actionName) { //users info
 
    return new Promise((resolve,reject)=>{
+    var sql;
+    if(config.type == "badge"){
     sql="Select * from progress where username='test'";
+    }
+    else sql="Select * from progress";
     pool.query(sql,(error,results,fields)=>{
     var result;
   if(results.length==0 ) {
@@ -19,11 +23,11 @@ var pool =require('./util/db').pool;
 console.log(result);
 
 return error? reject(error):resolve(result);
-} );
+});
 
 });
 }
-function updateAction(actionName,quantity){
+function updateAction(actionName,quantity){ //update for badges
 
     var aux= new Promise((resolve,reject)=>{
         var sql;
@@ -80,18 +84,63 @@ function retrieveUpdate(actionName){
 }
 
 
-async function updateXP(amount){
-var actXP=await getActionXP("asd");
-console.log(actXP[0].XPRewarded);
-var toaddXp=actXP[0].XPRewarded*amount;
-console.log(toaddXp);
-pool.query("Update users set xp = ? where username='test';",toaddXp,(err)=>{
+async function updateXP(actionName,amount){
+var actXP=await getActionXP(actionName);
+var aux=actXP[0].XPRewarded;
+var toaddXp=aux * amount;
+pool.query("Select xp,nivel from progress where username='test'",(err,result)=>{
+var values=[];
+var res=JSON.parse(JSON.stringify(result));
+var newvalue=res[0].xp+toaddXp
+values.push(res[0].xp+toaddXp);
+pool.query("Select * from levelconfig",(err,resultss)=>{
+    var lvldetails=JSON.parse(JSON.stringify(resultss));
+    console.log(lvldetails);
+    if(lvldetails[0].type=="liniar"){
+        var toupdate;
+        for(i=0;i<lvldetails[0].maxlvl;i++)
+        {
+            if(res[0].nivel==0)
+        { if( newvalue < lvldetails[0].nivel1  )
+            {
+            }   
+     
+    } else
+        if(newvalue < i* lvldetails[0].nivel1&& newvalue>(i-1)*lvldetails[0].nivel1) 
+        {toupdate=i;}
+    }
+    var val=[];val.push(toupdate-1);
+pool.query("Update progress set nivel=? where username='test';",[val]);
+    }
+    else if(lvldetails[0].type=="expo"){
+        var  toupdate;
+        for(i=0;i<lvldetails[0].maxlvl;i++)  
+        {
+            var val=[];
+        if(res[0].nivel==0)
+        { if( newvalue < lvldetails[0].nivel1  )
+            {
+            }   
+     
+    } else  if(newvalue <= Math.pow(2,i) * lvldetails[0].nivel1 && newvalue> Math.pow(2,i-1)*lvldetails[0].nivel1) {toupdate=i;}
+   
+}
+var val=[];val.push(toupdate);
+pool.query("Update progress set nivel=? where username='test';",[val]);
+    }
+});
+    pool.query("Update progress set xp = ? where username='test';",[values
+    
+],(err)=>{
     if(err) throw err;
+});   
 });
 }
 function getActionXP(action){
     var returnaux=new Promise((resolve,reject)=>{
-        pool.query("Select XPRewarded from actions where action=?",[action],(error,results,fields)=>{
+        var val=[];
+        val.push(action);
+        pool.query("Select XPRewarded from actions where action=?",[val],(error,results,fields)=>{
             var result;
             results=JSON.parse(JSON.stringify(results));
                     result=results;
