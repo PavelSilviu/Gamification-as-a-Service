@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 
 function allUsers() {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT * from users`;
+        var sql = `SELECT ID, UserName, Email, Password, Phone from users`;
         db.query(sql,(error, results, fields) => {
             var result;
             if (results.length == 0) {
@@ -80,7 +80,7 @@ db.connect((err) => {
         console.log("Mysql connected...");
     }
     
-    //allUsers();
+    allUsers();
 
     //insertUser();
     
