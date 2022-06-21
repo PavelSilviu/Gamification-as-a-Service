@@ -1,4 +1,6 @@
 const users = require('./controllers/users-controller');
+const badges = require ('./controllers/badge-controller');
+const levels = require ('./controllers/levels-controller');
 
 const varff = "ceva";
 
@@ -200,18 +202,6 @@ var server = http.createServer(function(req, res) {
         res.end();
     }
 
-    // if(req.url=="/views/badges.js")
-    // {
-    //     console.log("Onrouter");
-    //     res.writeHead(302, {
-    //         'Content-Type': 'text/html'
-    //     });
-    //     res.write(fs.readFileSync('views/badges.js'));
-    //     res.end();
-    // }
-
-
-
     if (req.url == "/images/badges/x.png") {
         console.log("Onrouter");
         res.writeHead(302, {
@@ -311,6 +301,28 @@ var server = http.createServer(function(req, res) {
         res.write(fs.readFileSync('images/badges/fourth.png'));
         res.end();
     }
+
+    if(req.url=="/views/bagesAndlevels.js")
+    {
+        console.log("Onrouter");
+        res.writeHead(302, {
+            'Content-Type': 'text/html'
+        });
+        res.write(fs.readFileSync('views/bagesAndlevels.js'));
+        res.end();
+    }
+
+
+    if (req.url == '/badges/GET' && req.method == "GET") {
+        console.log("get");
+        badges.allBadges(req, res);
+    }
+
+    if (req.url == '/badgesAndLevels/GET' && req.method == "GET") {
+        console.log("get");
+        levels.allLevels(req, res);
+    }
+
 });
 
 server.listen(4567);
