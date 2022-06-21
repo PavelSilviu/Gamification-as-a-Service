@@ -11,6 +11,8 @@ const badgeact=require("./controllers/ActionBadgeController");
 const lvlact=require("./controllers/ActionLevelController");
 const config=require("./controllers/configController");
 const confdata=require("./config");
+const badges = require ('./controllers/badge-controller');
+const levels = require ('./controllers/levels-controller');
 confdata.checkConfig();
 
 const hostname = '127.0.0.1';
@@ -105,6 +107,23 @@ const server = http.createServer((req, res) => {
   }
   else if(req.url=="/gams/retrieveData" && req.method=="GET"){
       badgeact.actionFNC(req,res);
+  }
+  else if(req.url=="/views/bagesAndlevels.js")
+  {
+      console.log("Onrouter");
+      res.writeHead(302, {
+          'Content-Type': 'text/html'
+      });
+      res.write(fs.readFileSync('views/bagesAndlevels.js'));
+      res.end();
+  }
+  else if (req.url == '/badges/GET' && req.method == "GET") {
+      console.log("get");
+      badges.allBadges(req, res);
+  }
+  else if (req.url == '/badgesAndLevels/GET' && req.method == "GET") {
+      console.log("get");
+      levels.allLevels(req, res);
   }
   else {
     res.statusCode = 404;

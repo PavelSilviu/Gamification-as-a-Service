@@ -3,16 +3,16 @@ const div_stg = document.getElementById("stanga");
 
 
 
-var badges=[];
+var levels=[];
 function getData(){
   xmlhttp= new XMLHttpRequest();
 
   xmlhttp.onreadystatechange=function(){
     if(xmlhttp.readyState==4){
-      badges=JSON.parse(xmlhttp.responseText);
+      levels=JSON.parse(xmlhttp.responseText);
     };
   };
-  xmlhttp.open("GET","/badges/GET",false);
+  xmlhttp.open("GET","/badgesAndLevels/GET",false);
   xmlhttp.send();
 };
 $(document).ready(getData()) ;
@@ -21,14 +21,14 @@ $(document).ready(getData()) ;
 
 
 
-function createBadge (id) {
-  console.log(badges);
+function createlevel (id) {
+  console.log(levels);
     var button = document.createElement("button");
 
     
     button.id = id;
     button.className = "level-div";
-    button.innerText = badges[id].NameBadge;
+    button.innerText = levels[id].NameLevel;
 
     var onClick = () => {
       var ok = 0;
@@ -52,10 +52,10 @@ function createBadge (id) {
         div.className = "descriere";
 
         var div_action = document.createElement("div");
-        div_action.innerText = badges[id].Action;
+        div_action.innerText = levels[id].Level1;
 
         var div_amount = document.createElement("div");
-        div_amount.innerText = badges[id].Start;
+        div_amount.innerText = levels[id].XP;
 
         div.appendChild(div_amount);
         div.appendChild(div_action);
@@ -71,7 +71,7 @@ function createBadge (id) {
 }
 
 function stergeDetalii() {
-  for (i = 0; i <= badges.length; i++) {
+  for (i = 0; i <= levels.length; i++) {
     const div = document.getElementById(`descriere${i}`);
     if (div != null)div.remove();
   }
@@ -80,6 +80,6 @@ function stergeDetalii() {
 
 
 
-for (i = 0; i < badges.length; i++) {
-    createBadge(i);
+for (i = 0; i < levels.length; i++) {
+    createlevel(i);
 }

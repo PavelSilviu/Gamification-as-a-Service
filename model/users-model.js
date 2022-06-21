@@ -144,4 +144,5 @@ function allLevels () {
         });
     });
 }
+
 module.exports = {findUser, allUsers, deleteUser, allBadges, allBadges, allLevels, create};
