@@ -79,9 +79,9 @@ class HandleHtmlCssJs{
     }
 
     matchesCss(req,res){
-        if (req.url === '/login.css') {
+        if (req.url === '/loginClient.css') {
             console.log('requested login css');
-            fs.readFile('./views/login.css', 'utf8', (err, data) => {
+            fs.readFile('./views/loginClient.css', 'utf8', (err, data) => {
                 if (err) {
                   res.writeHead(404, {'Content-Type': 'text/html'});
                   res.end('<html><body>404 Page not found</body></html>');

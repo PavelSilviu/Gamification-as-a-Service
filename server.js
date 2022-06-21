@@ -1,6 +1,6 @@
 const http = require('node:http');
 let LoginController=require('./controllers/loginController');
-let RegisterController=require('./controllers/registerController')
+let RegisterController=require('./controllers/registerController');
 let fs = require('fs');
 let HandleHtmlCssJs=require('./routes/getRequests/htmlCssRouteJs');
 let HandleImageRoute=require('./routes/getRequests/imagesRoute');
@@ -17,9 +17,11 @@ const server = http.createServer((req, res) => {
     }
   }
   else if (req.method === 'POST' && req.url === '/login') {
-    new LoginController(req,res).validate();
+    console.log('post login');
+    new LoginController(req,res);
   } 
   else if (req.method === 'POST' && req.url === '/register') {
+    console.log('request registerClient')
     new RegisterController(req,res);
   } 
   else {

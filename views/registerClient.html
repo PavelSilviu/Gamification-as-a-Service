@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Register</title>
     <link href="registerClient.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
         <div id="div-login-form">
-          <form action="UserHome.html" id="login-form">
+          <form id="login-form">
             <div id="form-title">
               REGISTER
             </div>
@@ -21,5 +21,49 @@
             <input type="submit" value="REGISTER">
           </form>
         </div>
+        <script>
+          let loginForm=document.getElementById("login-form");
+          loginForm.addEventListener("submit", handleFormSubmit);
+
+          async function handleFormSubmit(event){
+            event.preventDefault();
+            const form = event.currentTarget;
+            const url = "http://127.0.0.1:8081/register";
+            try {
+            const formData = new FormData(form);
+            const responseData = await postFormDataAsJson({ url, formData });
+
+            console.log({ responseData});
+
+            window.location.replace("http://127.0.0.1:8081/UserHome.html");
+
+            } catch (error) {
+              console.error(error);
+            }
+          }
+
+          async function postFormDataAsJson({ url, formData }) {
+            const plainFormData = Object.fromEntries(formData.entries());
+            const formDataJsonString = JSON.stringify(plainFormData);
+
+            const fetchOptions = {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Accept": "application/json"
+                },
+                body: formDataJsonString,
+            };
+
+            const response = await fetch(url, fetchOptions);
+
+            if (!response.ok) {
+              const errorMessage = await response.text();
+              throw new Error(errorMessage);
+            }
+
+            return response.json();
+          }
+        </script>
   </body>
 </html>

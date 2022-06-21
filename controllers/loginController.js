@@ -1,68 +1,53 @@
 let User=require('../model/User');
-let fs = require('fs');
-let path=require('path');
-
 class LoginController{
     body=null;
     inputsArray=null;
     input1Array=null;
-    input2Array=null;
     mypath=null;
-    res=null;
     constructor (req, res){
         this.body = [];
-        this.res=res;
         req.on('data', (chunk) => {
             this.body.push(chunk);
         }).on('end', () => {
             this.body = Buffer.concat(this.body).toString();
-        }); 
-        ()=>{
-            this.inputsArray=this.body.split('&');
-            this.input1Array=this.inputsArray[0].split('=');
-            this.input2Array=this.inputsArray[1].split('=');
-            this.finalInput1=this.input1Array[1];
-            this.finalInput2=this.input2Array[1];
             //validare pt model
-            this.validate(this.finalInput1, this.finalInput2);
-        }
-        //redirect
+            let jsonObject=JSON.parse(this.body);
+            let username=jsonObject.username;
+            let pass=jsonObject.password;
+            console.log('username: '+username);
+            console.log('password: '+pass);
+            //verificare in model
+            let user=new User();
+            async function fct(){
+                var fctCallRes=0;
+                var a=await user.findByName(username).then((result) => {
+                    fctCallRes=2;
+                }).catch((error) => {
+                    fctCallRes=1;
+                });
+                var json;
+                
+                if(fctCallRes===2){
+                    //response JSON
+                    res.writeHead(200, {"Content-Type": "application/json"});
+                    console.log('sunt in controller, userul exista');
+                    json = JSON.stringify({ 
+                    existent: "da"
+                  });
+                }  
+                else if(fctCallRes===1){
+                    //status code 404 or smth
+                    res.writeHead(404, {"Content-Type": "application/json"});
+                    console.log('sunt in controler, userul nu exista');
+                    json = JSON.stringify({ 
+                        existent: "nu"
+                    });
+                }
+                res.end(json)
+            }
+            fct();
+            
+        });
     };
-    validate(name, pass){
-        console.log('jopa');
-        let user=new User();
-        if(user.findByName('name')!==0){
-            console.log('request UserHome din loginController');
-            fs.readFile('./views/UserHome.html', 'utf8', (err, data) => {
-                if (err) {
-                  this.res.writeHead(404, {'Content-Type': 'text/html'});
-                  this.res.end('<html><body>404 Page not found</body></html>');
-                  console.error('eroare la readfile');
-                  return;
-                }
-                else{
-                  this.res.write(data);
-                  this.res.end();
-                }
-            });
-        }
-        else{
-            console.log('request login din loginController')
-            fs.readFile('./views/loginClient.html', 'utf8', (err, data) => {
-                if (err) {
-                  this.res.writeHead(404, {'Content-Type': 'text/html'});
-                  this.res.end('<html><body>404 Page not found</body></html>');
-                  console.error('eroare la readfile');
-                  return;
-                }
-                else{
-                  this.res.write(data);
-                  this.res.end();
-                }
-            });
-        }
-    }
-
-
 }
 module.exports=LoginController;
