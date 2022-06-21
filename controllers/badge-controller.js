@@ -1,4 +1,3 @@
-console.log("am ajuns");
 const data = require('../model/users-model');
 
 
@@ -20,14 +19,23 @@ function myFunction (req, res) {
     });
 }
 
-function deleteUser (req, res) {
+
+function allBadges (req, res) {
     console.log("am ajuns1");
     var body = '';
     req.on('data', function(chunk) {
         body += chunk.toString('utf8');
-        data.deleteUser(body);
     });
-    res.end("s-a sters");
+
+    req.on('end', async function() {
+        var response = [];
+        const result = await data.allBadges();
+        console.log("result");
+        result.forEach(element => {
+            response.push({ID : element.ID, NameBadge : element.NameBadge, Action : element.Action, Start : element.Start});
+        });
+        res.end(JSON.stringify(response));
+    });
 }
 
-module.exports = {myFunction, deleteUser};
+module.exports = {myFunction, allBadges};
