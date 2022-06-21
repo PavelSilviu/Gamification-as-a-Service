@@ -1,6 +1,6 @@
-let User=require('../model/User');
 let fs = require('fs');
 let path=require('path');
+let userOperations=require('../model/users-model');
 
 class RegisterController{
     body=null;
@@ -20,11 +20,9 @@ class RegisterController{
             console.log('username: '+username);
             console.log('password: '+pass);
             //verificare in model
-            let user=new User();
             async function fct(){
                 var fctCallRes=0;
-                let index=User.index++;
-                var a=await user.create(index ,username, pass).then((result) => {
+                var a=await userOperations.create(username, pass).then((result) => {
                     fctCallRes=2;
                 }).catch((error) => {
                     fctCallRes=1;

@@ -1,4 +1,5 @@
 let User=require('../model/User');
+let userOperations=require('../model/users-model');
 class LoginController{
     body=null;
     inputsArray=null;
@@ -17,10 +18,9 @@ class LoginController{
             console.log('username: '+username);
             console.log('password: '+pass);
             //verificare in model
-            let user=new User();
             async function fct(){
                 var fctCallRes=0;
-                var a=await user.findByName(username).then((result) => {
+                var a=await userOperations.findUser(username).then((result) => {
                     fctCallRes=2;
                 }).catch((error) => {
                     fctCallRes=1;
