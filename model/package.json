@@ -1,0 +1,17 @@
+{
+  "name": "model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "users-model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon users-model.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
