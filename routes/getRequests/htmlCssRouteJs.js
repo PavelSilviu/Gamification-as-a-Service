@@ -214,6 +214,21 @@ class HandleHtmlCssJs{
               }
           });
         }
+        else if (req.url === '/views/login.css') {
+          console.log('requested login css');
+          fs.readFile('./views/login.css', 'utf8', (err, data) => {
+              if (err) {
+                res.writeHead(404, {'Content-Type': 'text/html'});
+                res.end('<html><body>404 Page not found</body></html>');
+                console.error('eroare la readfile');
+                return;
+              }
+              else{
+                res.write(data);
+                res.end();
+              }
+          });
+        }
         else if (req.url === '/UserHome.css') {
             console.log('requested UserHome css');
             fs.readFile('./views/UserHome.css', 'utf8', (err, data) => {
@@ -381,6 +396,21 @@ class HandleHtmlCssJs{
         else if(req.url  === '/views/login-validari.js'){
           console.log('requested login-validari js');
           fs.readFile('views/login-validari.js', 'utf8', (err, data) => {
+              if (err) {
+                res.writeHead(404, {'Content-Type': 'text/html'});
+                res.end('<html><body>404 Page not found</body></html>');
+                console.error('eroare la readfile');
+                return;
+              }
+              else{
+                res.write(data);
+                res.end();
+              }
+          });
+        }
+        else if(req.url  === '/views/users.js'){
+          console.log('requested users js');
+          fs.readFile('views/users.js', 'utf8', (err, data) => {
               if (err) {
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.end('<html><body>404 Page not found</body></html>');

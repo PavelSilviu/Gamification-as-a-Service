@@ -1,8 +1,7 @@
 const { config } = require('../config');
+var pool = require('./util/db').pool;
 
-var pool =require('./util/db').pool;
-
-  function  read(actionName) { //users info
+ function  read(actionName) { //users info
 
    return new Promise((resolve,reject)=>{
     var sql;
@@ -97,36 +96,14 @@ pool.query("Select * from levelconfig",(err,resultss)=>{
     var lvldetails=JSON.parse(JSON.stringify(resultss));
     console.log(lvldetails);
     if(lvldetails[0].type=="liniar"){
-        var toupdate;
-        for(i=0;i<lvldetails[0].maxlvl;i++)
-        {
-            if(res[0].nivel==0)
-        { if( newvalue < lvldetails[0].nivel1  )
-            {
-            }   
-     
-    } else
-        if(newvalue < i* lvldetails[0].nivel1&& newvalue>(i-1)*lvldetails[0].nivel1) 
-        {toupdate=i;}
+    if(res[0].nivel==0){
+        if(newvalue >= lvldetails[0].nivel1) pool.query("Update progress set nivel=1 where username='test';");
     }
-    var val=[];val.push(toupdate-1);
-pool.query("Update progress set nivel=? where username='test';",[val]);
-    }
-    else if(lvldetails[0].type=="expo"){
-        var  toupdate;
-        for(i=0;i<lvldetails[0].maxlvl;i++)  
-        {
-            var val=[];
-        if(res[0].nivel==0)
-        { if( newvalue < lvldetails[0].nivel1  )
-            {
-            }   
-     
-    } else  if(newvalue <= Math.pow(2,i) * lvldetails[0].nivel1 && newvalue> Math.pow(2,i-1)*lvldetails[0].nivel1) {toupdate=i;}
-   
+    else if(newvalue >= res[0].nivel * lvldetails[0].nivel1 ) {
+    var val=[];
+    val.push(res[0].nivel+1);
+    pool.query("Update progress set nivel= ? where username='test';",[val]);
 }
-var val=[];val.push(toupdate);
-pool.query("Update progress set nivel=? where username='test';",[val]);
     }
 });
     pool.query("Update progress set xp = ? where username='test';",[values

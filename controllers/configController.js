@@ -1,10 +1,12 @@
-const pool=require("../Model/util/db").pool;
+const pool=require("../model/util/db").pool;
 const config=require("../config");
 
 users=["test","Alin","Mihai","Matei"];
  function setTable(data){
 if(config.config.done==1) return 0 ;
+
     if("level" in data){
+   
         pool.query("Create Table progress (username VARCHAR(255) , xp INT , nivel INT) ",()=>{
             users.forEach(element=>{
                 var  values=[];
@@ -22,24 +24,15 @@ if(config.config.done==1) return 0 ;
         });
      
          pool.query("Create table actions (action VARCHAR(255), XPRewarded INT)",()=>{
-          if(typeof data.Action==Array) 
-          {for(i=0;i<data.Action.length;i++)
+            for(i=0;i<data.Action.length;i++)
       {
-         var values=[data.Action[i],data.Awarded[i]];
-     
+        var values=[data.Action[i],data.Awarded[i]];
         pool.query("Insert into actions (action,XPRewarded) Values (?) ",[values],(err)=>
         {
             if(err ) throw err;
         });
-      }}
-      else {
-        var values=[data.Action,data.Awarded];
-
-        pool.query("Insert into actions (action,XPRewarded) Values (?) ",[values],(err)=>
-        {
-            if(err ) throw err;
-        });
-    }});
+      }
+         });
     
         pool.query("Create table levelconfig (nivel1 INT , type VARCHAR(20),maxlvl INT) ",()=>
         {
@@ -73,34 +66,19 @@ if(config.config.done==1) return 0 ;
         if(err) throw err;
         console.log("succes create");
         users.forEach(element => {
-          if(data.Badge==Array)
-        {
             for(i=0;i<data.Badge.length;i++)
             {values=[];
                 values.push(element);
                 values.push(data.Badge[i]);
                 values.push(data.Function[i]);
-                values.push(data.amount[i]);
+                values.push(5);
                 values.push(0);
                 values.push(0);
             pool.query("Insert into progress (username,badge,Action,needamount,current,awarded) VALUES (?) ;",[values] ,(err)=>{
                 if(err) throw err;
                 console.log("Succes insert");
             });
-        
-          };
-        }else {values=[];
-        values.push(element);
-        values.push(data.Badge);
-        values.push(data.Function);
-        values.push(data.amount);
-        values.push(0);
-        values.push(0);
-        ool.query("Insert into progress (username,badge,Action,needamount,current,awarded) VALUES (?) ;",[values] ,(err)=>{
-          if(err) throw err;
-          console.log("Succes insert");
-      });
-      }
+    };
 });
 });
 pool.query("Create Table config (type VARCHAR(255),done INT)",()=>{
